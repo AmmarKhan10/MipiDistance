@@ -293,6 +293,161 @@
         stroke-dashoffset: 1000;
       }
     }
+
+    /* Custom Message Box Styles */
+    .custom-message-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .custom-message-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .custom-message-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .custom-message-content {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #4a5568;
+      min-height: 150px;
+      padding: 1rem;
+      border: 2px dashed #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .custom-message-content:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .custom-message-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(124, 77, 255, 0.4);
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: var(--dark);
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    /* Cat Game Styles */
+    .cat-game-container {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .cat-game-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .cat-game-area {
+      position: relative;
+      height: 300px;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 3px solid #e2e8f0;
+    }
+
+    .cat {
+      position: absolute;
+      font-size: 4rem;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s ease;
+    }
+
+    .cat:hover {
+      transform: scale(1.1);
+    }
+
+    .cat-score {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .cat-instructions {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 1.5rem;
+    }
+
+    .cat-game-btn {
+      background: var(--gradient);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cat-game-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(124, 77, 255, 0.4);
+    }
+
+    .cat-message {
+      margin-top: 1rem;
+      font-style: italic;
+      color: var(--primary);
+      min-height: 1.5rem;
+    }
   </style>
 </head>
 
@@ -303,7 +458,7 @@
     <header>
       <div class="header-content">
         <h1>Miki & Pipi</h1>
-        <div class="subtitle"></div>
+        <div class="subtitle">Distance makes the heart grow fonder</div>
         <div class="hearts">💕</div>
       </div>
     </header>
@@ -312,7 +467,7 @@
       <div class="card distance-card">
         <div class="distance-label">Current Distance</div>
         <div class="distance-value" id="distance-value">0 km</div>
-        <div class="distance-label">Apart but always with me</div>
+        <div class="distance-label">Apart but never far in heart</div>
       </div>
 
       <div class="card love-card">
@@ -321,7 +476,7 @@
           How Much I Love You
         </div>
         <div class="love-value" id="love-value">0</div>
-        <div class="counter-info">My love for you</div>
+        <div class="counter-info">My love for you grows infinitely...</div>
       </div>
     </div>
 
@@ -351,7 +506,7 @@
         <p>I love you deeply from the bottom of my heart, and there's genuinely nothing that can change that and nothing
           ever will.</p>
       </div>
-      <div class="signature">I Love You So Much Maman </div>
+      <div class="signature">I Love You So Much Maman 💖</div>
     </div>
 
     <!-- New message card -->
@@ -369,6 +524,34 @@
           for how things turned out but just know ke ill do anything for you and im really sorry.</p>
       </div>
       <div class="signature">A heartfelt Apology which i actually mean</div>
+    </div>
+
+    <div class="message-card">
+      <div class="message-header">
+        <div class="message-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="message-title">Apology</div>
+      </div>
+      <div class="message-content">
+        <p>Hi maman im writing this at night waiting for you and regretting my actions. I know these were a rough few months and things have been hard for both of us but trust me theres no one i would rather spend this time but you, i love u when were apart and not really talking and i love you when were happy and excited but throughout all of the stuff good or bad in my life the only person i remember is you. I am really sorry for my actions and how ive behaved recently i havent been giving you proper attention and i hate that. I am really sorry for everything Ill make this right and we wont give up on each other because thats how we build something meaningful. Im sorry maman and i really really mean it.</p>
+      </div>
+      <div class="signature">16 - 11 - 2025</div>
+    </div>
+
+    <!-- Cat Game -->
+    <div class="cat-game-container">
+      <div class="cat-game-title">
+        <i class="fas fa-paw"></i>
+        Cat Game For My Mort
+      </div>
+      <div class="cat-score">Score: <span id="score">0</span></div>
+      <div class="cat-instructions">Click on the cats as they appear to earn points!</div>
+      <div class="cat-game-area" id="cat-game-area">
+        <!-- Cats will appear here -->
+      </div>
+      <button class="cat-game-btn" id="start-game">Start Game</button>
+      <div class="cat-message" id="cat-message"></div>
     </div>
   </div>
 
@@ -407,6 +590,125 @@
         Math.sin(dLon / 2) ** 2;
       const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
       return R * c;
+    }
+
+    // Cat Game Logic
+    let gameScore = 0;
+    let gameActive = false;
+    let gameTimer;
+    let catInterval;
+
+    function startCatGame() {
+      if (gameActive) return;
+
+      gameActive = true;
+      gameScore = 0;
+      document.getElementById('score').textContent = gameScore;
+      document.getElementById('start-game').textContent = 'Playing...';
+      document.getElementById('cat-message').textContent = 'Catch the cats! 🐱';
+
+      // Clear any existing cats
+      const gameArea = document.getElementById('cat-game-area');
+      gameArea.innerHTML = '';
+
+      // Create cats at intervals
+      catInterval = setInterval(createCat, 1000);
+
+      // End game after 30 seconds
+      gameTimer = setTimeout(endCatGame, 30000);
+    }
+
+    function createCat() {
+      if (!gameActive) return;
+
+      const gameArea = document.getElementById('cat-game-area');
+      const cat = document.createElement('div');
+      cat.className = 'cat';
+      cat.innerHTML = '🐱';
+
+      // Random position
+      const maxX = gameArea.offsetWidth - 60;
+      const maxY = gameArea.offsetHeight - 60;
+      const x = Math.floor(Math.random() * maxX);
+      const y = Math.floor(Math.random() * maxY);
+
+      cat.style.left = `${x}px`;
+      cat.style.top = `${y}px`;
+
+      // Add click event
+      cat.addEventListener('click', () => {
+        gameScore++;
+        document.getElementById('score').textContent = gameScore;
+        cat.remove();
+
+        // Show cute messages based on score
+        if (gameScore === 5) {
+          document.getElementById('cat-message').textContent = 'You\'re a cat whisperer! 🐾';
+        } else if (gameScore === 10) {
+          document.getElementById('cat-message').textContent = 'Purrfect! You\'re amazing! 😻';
+        } else if (gameScore === 15) {
+          document.getElementById('cat-message').textContent = 'You\'re the cat\'s meow! 🎉';
+        }
+      });
+
+      gameArea.appendChild(cat);
+
+      // Remove cat after 2 seconds if not clicked
+      setTimeout(() => {
+        if (cat.parentNode) {
+          cat.remove();
+        }
+      }, 2000);
+    }
+
+    function endCatGame() {
+      gameActive = false;
+      clearInterval(catInterval);
+      clearTimeout(gameTimer);
+
+      document.getElementById('start-game').textContent = 'Play Again';
+
+      const gameArea = document.getElementById('cat-game-area');
+      gameArea.innerHTML = '';
+
+      // Show final message
+      let message = '';
+      if (gameScore < 5) {
+        message = 'Good try! The cats were too quick! 😸';
+      } else if (gameScore < 10) {
+        message = 'Well done! You\'re a cat lover! 🐱';
+      } else if (gameScore < 15) {
+        message = 'Amazing! You\'re a cat expert! 😻';
+      } else {
+        message = 'Purrfect! You\'re the ultimate cat whisperer! 🏆';
+      }
+
+      document.getElementById('cat-message').textContent = `Game Over! ${message} Final Score: ${gameScore}`;
+    }
+
+    // Custom Message Box Logic
+    function setupCustomMessage() {
+      const customMessage = document.getElementById('custom-message');
+      const resetBtn = document.getElementById('reset-btn');
+      const saveBtn = document.getElementById('save-btn');
+
+      // Reset to default message
+      resetBtn.addEventListener('click', () => {
+        customMessage.textContent = 'Type your special message here... 💕';
+      });
+
+      // Save message to localStorage
+      saveBtn.addEventListener('click', () => {
+        const message = customMessage.textContent;
+        localStorage.setItem('customLoveMessage', message);
+        alert('Message saved! It will appear here next time you visit.');
+      });
+
+      // Load saved message if exists
+      const savedMessage = localStorage.getItem('customLoveMessage');
+      if (savedMessage) {
+        customMessage.textContent = savedMessage;
+      }
     }
 
     // Initialize the page
@@ -485,6 +787,12 @@
       setTimeout(() => {
         setInterval(updateCounter, 100); // Update every 100ms
       }, 1000);
+
+      // Setup cat game
+      document.getElementById('start-game').addEventListener('click', startCatGame);
+
+      // Setup custom message box
+      setupCustomMessage();
     });
   </script>
 </body>
